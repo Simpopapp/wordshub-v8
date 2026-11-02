@@ -24,7 +24,6 @@ interface PageHeaderProps {
  *   Foco único pós-conclusão   → max-w-2xl  (resumo do simulado)
  * O header preenche o contêiner onde for montado; a rota escolhe o nível.
  */
- */
 export function PageHeader({ kicker, title, subtitle, actions, className }: PageHeaderProps) {
   return (
     <div className={cn("flex flex-wrap items-end justify-between gap-4", className)}>
