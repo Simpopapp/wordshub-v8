@@ -28,7 +28,7 @@ Precedência: project12 > prd-project12 > este roadmap. Gates por fase: vitest (
 - Gates: vitest 478/478 verde · tsgo limpo · build OK (Nitro) · lint 0 erros/11 warnings · Playwright 17 combinações (11 rotas × 390×844 + 6 desktop): overflow 0 px em todas, axe 0 violações em todas, console 0 erros; screenshots em /tmp/browser/sweep12/shots conferidos (practice, settings, exam, vocabulary).
 
 ## Fase 5 — Fechamento
-- [ ] E2E ponta a ponta do §11.6 · AGENTS.md (decisão estrutural do TranslationSheet + design system) · monitor-notice-proj12.md · reporte §20 do Plan.md ao usuário
-- Gates: vitest verde · tsgo · build · lint · Playwright E2E completo com console limpo · checklist §11 do PRD confirmado
+- [x] E2E ponta a ponta do §11.6 · AGENTS.md (decisão estrutural do TranslationSheet + design system) · monitor-notice-proj12.md · reporte §20 do Plan.md ao usuário. E2E em browser real com IA (390×844): ajustes → toggle persistente → /practice → token "climate" → TranslationSheet (IA) → pill de captura → vocabulário → "Revisar hoje" → cartão → "✓ Lembrei" → Sessão concluída (1 ✓) → backup schemaVersion 7 com o item; pageerrors 0.
+- Gates: vitest 478/478 verde · tsgo limpo · build OK · lint 0 erros/11 warnings · Playwright E2E completo com console limpo (pageerrors 0) · checklist §11 do PRD confirmado (1–6).
 
 > Próximo remix: (a preencher só se o remix terminar antes do roadmap esgotar)
