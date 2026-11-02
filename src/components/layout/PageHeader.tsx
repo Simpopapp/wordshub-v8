@@ -14,8 +14,16 @@ interface PageHeaderProps {
 
 /**
  * Cabeçalho de página padrão (PRD §8): título serif com hierarquia real,
- * subtítulo e ações. A largura da página continua sendo responsabilidade
- * da rota (o header preenche o contêiner onde for montado).
+ * subtítulo e ações.
+ *
+ * Regra de largura de página (Fase 4 — fonte única da regra):
+ *   Home (hero editorial)      → max-w-5xl
+ *   Índices de lista/scan      → max-w-4xl  (SectionPage, exam config)
+ *   Superfícies de estudo      → max-w-3xl  (practice runner + loading, session,
+ *                                            vocabulary, settings, ExamRunner)
+ *   Foco único pós-conclusão   → max-w-2xl  (resumo do simulado)
+ * O header preenche o contêiner onde for montado; a rota escolhe o nível.
+ */
  */
 export function PageHeader({ kicker, title, subtitle, actions, className }: PageHeaderProps) {
   return (
