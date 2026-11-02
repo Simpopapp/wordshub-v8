@@ -248,7 +248,7 @@ export function ReadAloudPractice({ question: loaded }: { question: ReadAloudQue
     : 0;
 
   const sessionSlot = session.active ? (
-    <div className="mb-4 rounded-2xl border border-border bg-card px-4 py-3">
+    <div className="mb-4 rounded-2xl border border-border/60 bg-card px-4 py-3">
       <div className="flex items-center justify-between text-xs text-muted-foreground">
         <span className="font-medium text-foreground">
           Sessão · {session.index} de {session.size}
@@ -362,7 +362,7 @@ export function ReadAloudPractice({ question: loaded }: { question: ReadAloudQue
       }
     >
       {/* Passage */}
-      <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
+      <div className="rounded-2xl border border-border/60 bg-card p-6 md:p-8 shadow-card">
         {manualMode || (phase === "result" && grade) || !wordTranslation ? (
           <PassageText
             words={question.words}
@@ -406,7 +406,7 @@ export function ReadAloudPractice({ question: loaded }: { question: ReadAloudQue
         ) : null}
         {phase === "result" && grade ? <ScorePanel grade={grade} /> : null}
         {phase === "result" && notGradable && !manualMode ? (
-          <div className="rounded-xl border border-border bg-card p-4 text-sm">
+          <div className="rounded-xl border border-border/60 bg-card p-4 text-sm">
             <p className="font-medium">Não foi possível avaliar esta leitura.</p>
             <p className="mt-1 text-muted-foreground">
               A transcrição ficou curta demais — fale mais perto do microfone e tente de novo, ou
@@ -423,7 +423,7 @@ export function ReadAloudPractice({ question: loaded }: { question: ReadAloudQue
           </div>
         ) : null}
         {manualMode ? (
-          <div className="rounded-xl border border-border bg-card p-4 text-sm">
+          <div className="rounded-xl border border-border/60 bg-card p-4 text-sm">
             <p className="font-medium">Toque nas palavras que você errou.</p>
             <p className="mt-1 text-muted-foreground">
               Score previsto:{" "}
@@ -452,7 +452,7 @@ export function ReadAloudPractice({ question: loaded }: { question: ReadAloudQue
           </div>
         ) : null}
         {phase === "result" && !grade && !notGradable && !micDenied && !manualMode ? (
-          <div className="rounded-xl border border-border bg-card p-4 text-sm text-muted-foreground">
+          <div className="rounded-xl border border-border/60 bg-card p-4 text-sm text-muted-foreground">
             Leitura registrada
             {recognition.supported ? "" : " (este navegador não corrige automaticamente)"}. Ouça o
             modelo e compare a entonação — ou tente de novo.

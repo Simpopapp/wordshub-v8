@@ -218,7 +218,7 @@ export function RepeatSentencePractice({ question }: { question: RepeatSentenceQ
       }
     >
       {/* Frase só aparece no resultado — no exame real você não lê a frase */}
-      <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
+      <div className="rounded-2xl border border-border/60 bg-card p-6 md:p-8 shadow-card">
         {question.prompt ? (
           <p className="mb-4 text-sm italic text-muted-foreground">{question.prompt}</p>
         ) : null}
@@ -272,7 +272,7 @@ export function RepeatSentencePractice({ question }: { question: RepeatSentenceQ
           ) : null}
           {grade ? <ScorePanel grade={grade} /> : null}
           {notGradable && !micDenied ? (
-            <div className="rounded-xl border border-border bg-card p-4 text-sm">
+            <div className="rounded-xl border border-border/60 bg-card p-4 text-sm">
               <p className="font-medium">Não foi possível avaliar esta repetição.</p>
               <p className="mt-1 text-muted-foreground">
                 A transcrição ficou curta demais — fale mais perto do microfone e tente de novo.

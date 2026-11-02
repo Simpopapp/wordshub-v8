@@ -49,7 +49,7 @@ function SessionBanner({ qid }: { qid: string }) {
   const current = sessionNextId() === qid;
   const nid = sessionNextId();
   return (
-    <div className="mb-4 rounded-2xl border border-border bg-card px-4 py-3">
+    <div className="mb-4 rounded-2xl border border-border/60 bg-card px-4 py-3">
       <div className="flex items-center justify-between gap-3 text-sm">
         <span className="text-muted-foreground">
           Sessão · {session.index} de {session.size}
@@ -94,7 +94,7 @@ function ShortcutsOverlay({ onClose }: { onClose: () => void }) {
       onClick={onClose}
     >
       <div
-        className="w-full max-w-sm rounded-2xl border border-border bg-card p-6"
+        className="w-full max-w-sm rounded-2xl border border-border/60 bg-card p-6"
         onClick={(e) => e.stopPropagation()}
       >
         <h2 className="font-serif text-lg font-semibold">Atalhos de teclado</h2>
@@ -380,7 +380,7 @@ export function PracticeShell({
               <span className="font-normal text-muted-foreground">(tecla N)</span>
             </button>
             {notesOpen ? (
-              <div className="mt-2 rounded-2xl border border-border bg-card p-4">
+              <div className="mt-2 rounded-2xl border border-border/60 bg-card p-4">
                 <textarea
                   value={noteDraft}
                   onChange={(e) => setNoteDraft(e.target.value)}
@@ -420,7 +420,7 @@ export function PracticeShell({
        * Sticky acima da TabBar mobile (56px + safe area); desktop encosta no rodapé. */}
       {!preview ? (
         <footer className="sticky bottom-[calc(3.5rem+env(safe-area-inset-bottom))] z-20 mt-auto border-t border-border/70 bg-background/95 backdrop-blur md:bottom-0">
-          <div className="mx-auto flex w-full max-w-4xl flex-wrap items-center justify-between gap-x-4 gap-y-2 px-4 py-3 sm:px-6">
+          <div className="mx-auto flex w-full max-w-3xl flex-wrap items-center justify-between gap-x-4 gap-y-2 px-4 py-3 sm:px-6">
             <div className="min-w-0 flex-1 basis-40 text-sm text-muted-foreground">
               {footerText}
             </div>

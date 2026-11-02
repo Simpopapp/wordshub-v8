@@ -137,7 +137,7 @@ export function PlusPhraseCard({
   // comportamento anterior: nada pisca como "carregando".)
   if (enabled && !audio && !translationMode) {
     return (
-      <div className="mt-4 rounded-xl border border-border bg-card p-4 text-sm text-muted-foreground">
+      <div className="mt-4 rounded-xl border border-border/60 bg-card p-4 text-sm text-muted-foreground">
         <p className="font-serif text-xs font-semibold uppercase tracking-wider text-muted-foreground">
           Tradução por frase · Studie Plus
         </p>
@@ -315,7 +315,7 @@ export function PlusPhraseCard({
 
   return (
     <>
-      <div className="mt-4 rounded-2xl border border-border bg-card p-4 shadow-card">
+      <div className="mt-4 rounded-2xl border border-border/60 bg-card p-4 shadow-card">
         <div className="flex items-center justify-between gap-2">
           <p className="font-serif text-xs font-semibold uppercase tracking-wider text-muted-foreground">
             {header}

@@ -217,7 +217,7 @@ export function AnswerShortPractice({ question }: { question: AnswerShortQuestio
         </>
       }
     >
-      <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
+      <div className="rounded-2xl border border-border/60 bg-card p-6 md:p-8 shadow-card">
         {question.prompt ? (
           <p className="mb-4 text-sm italic text-muted-foreground">{question.prompt}</p>
         ) : null}
@@ -264,7 +264,7 @@ export function AnswerShortPractice({ question }: { question: AnswerShortQuestio
             </div>
           ) : null}
           {grade ? (
-            <div className="rounded-xl border border-border bg-card p-4 text-sm">
+            <div className="rounded-xl border border-border/60 bg-card p-4 text-sm">
               <p className="font-medium">
                 {grade.correct ? "✅ Resposta aceita" : "❌ Resposta não reconhecida"}
               </p>
@@ -284,7 +284,7 @@ export function AnswerShortPractice({ question }: { question: AnswerShortQuestio
             </div>
           ) : null}
           {notGradable && !micDenied ? (
-            <div className="rounded-xl border border-border bg-card p-4 text-sm">
+            <div className="rounded-xl border border-border/60 bg-card p-4 text-sm">
               <p className="font-medium">Nada foi reconhecido.</p>
               <p className="mt-1 text-muted-foreground">
                 Fale mais perto do microfone e tente de novo.

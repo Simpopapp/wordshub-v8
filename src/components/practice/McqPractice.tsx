@@ -227,7 +227,7 @@ export function McqPractice({ question }: { question: ChoiceQuestion }) {
       }
     >
       {/* Passage / prompt */}
-      <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
+      <div className="rounded-2xl border border-border/60 bg-card p-6 md:p-8 shadow-card">
         {question.prompt ? (
           <p className="mb-4 text-sm italic text-muted-foreground">{question.prompt}</p>
         ) : null}
@@ -272,7 +272,7 @@ export function McqPractice({ question }: { question: ChoiceQuestion }) {
       ) : null}
 
       {/* Opções */}
-      <div className="mt-6 rounded-2xl border border-border bg-card p-6 md:p-8">
+      <div className="mt-6 rounded-2xl border border-border/60 bg-card p-6 md:p-8 shadow-card">
         <div className="flex items-center justify-between gap-3">
           <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
             {copy.optionsLabel}
@@ -313,7 +313,7 @@ export function McqPractice({ question }: { question: ChoiceQuestion }) {
       {/* Resultado */}
       {phase === "result" && grade ? (
         <div className="mt-6 space-y-4">
-          <div className="rounded-2xl border border-border bg-card p-6">
+          <div className="rounded-2xl border border-border/60 bg-card p-6">
             <div className="flex flex-wrap items-center gap-2">
               <span className="rounded-full bg-primary/10 px-3 py-1 font-serif text-lg font-semibold text-primary tabular-nums">
                 {grade.score}%
@@ -344,7 +344,7 @@ export function McqPractice({ question }: { question: ChoiceQuestion }) {
           </div>
 
           {question.explanation ? (
-            <div className="rounded-xl border border-border bg-card p-4 text-sm">
+            <div className="rounded-xl border border-border/60 bg-card p-4 text-sm">
               <div className="flex items-center justify-between gap-2">
                 <p className="font-medium">Explicação</p>
                 {plusAudioFor(question, "explanation", question.explanation) ? (
@@ -366,7 +366,7 @@ export function McqPractice({ question }: { question: ChoiceQuestion }) {
           ) : null}
 
           {hasAudio ? (
-            <details className="rounded-xl border border-border bg-card p-4 text-sm">
+            <details className="rounded-xl border border-border/60 bg-card p-4 text-sm">
               <summary className="cursor-pointer font-medium">Ver transcrição do áudio</summary>
               <p className="mt-2 font-serif leading-relaxed text-muted-foreground">
                 {question.transcript || question.audioText}

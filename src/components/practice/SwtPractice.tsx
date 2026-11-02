@@ -103,7 +103,7 @@ export function SwtPractice({ question }: { question: SwtQuestion }) {
       }
     >
       {/* Texto-fonte */}
-      <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
+      <div className="rounded-2xl border border-border/60 bg-card p-6 md:p-8 shadow-card">
         {question.prompt ? (
           <p className="mb-4 text-sm italic text-muted-foreground">{question.prompt}</p>
         ) : null}
@@ -146,7 +146,7 @@ export function SwtPractice({ question }: { question: SwtQuestion }) {
       />
 
       {/* Área de resposta */}
-      <div className="mt-6 rounded-2xl border border-border bg-card p-6 md:p-8">
+      <div className="mt-6 rounded-2xl border border-border/60 bg-card p-6 md:p-8 shadow-card">
         <textarea
           value={typed}
           onChange={(e) => setTyped(e.target.value)}
@@ -179,7 +179,7 @@ export function SwtPractice({ question }: { question: SwtQuestion }) {
       {phase === "result" && grade ? (
         <div className="mt-6 space-y-4">
           <TemplateWarning verdict={template} />
-          <div className="rounded-2xl border border-border bg-card p-6">
+          <div className="rounded-2xl border border-border/60 bg-card p-6">
             <div className="flex flex-wrap items-center gap-2">
               <span className="rounded-full bg-primary/10 px-3 py-1 font-serif text-lg font-semibold text-primary tabular-nums">
                 {grade.score}%
@@ -235,14 +235,14 @@ export function SwtPractice({ question }: { question: SwtQuestion }) {
           </div>
 
           {question.gradingNotes ? (
-            <div className="rounded-xl border border-border bg-card p-4 text-sm">
+            <div className="rounded-xl border border-border/60 bg-card p-4 text-sm">
               <p className="font-medium">O que o corretor procura</p>
               <p className="mt-1 text-muted-foreground">{question.gradingNotes}</p>
             </div>
           ) : null}
 
           {question.sample ? (
-            <div className="rounded-xl border border-border bg-card p-4 text-sm">
+            <div className="rounded-xl border border-border/60 bg-card p-4 text-sm">
               <div className="flex items-center justify-between gap-2">
                 <p className="font-medium">Resposta modelo</p>
                 <PlusSpeakButton

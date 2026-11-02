@@ -129,7 +129,7 @@ export function HiwPractice({ question }: { question: HiwQuestion }) {
       }
     >
       {/* Texto clicável */}
-      <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
+      <div className="rounded-2xl border border-border/60 bg-card p-6 md:p-8 shadow-card">
         {question.prompt ? (
           <p className="mb-4 text-sm italic text-muted-foreground">
             {question.prompt || "Clique nas palavras que diferem do áudio."}
@@ -169,7 +169,7 @@ export function HiwPractice({ question }: { question: HiwQuestion }) {
       {/* Resultado */}
       {phase === "result" && grade ? (
         <div className="mt-6 space-y-4">
-          <div className="rounded-2xl border border-border bg-card p-6">
+          <div className="rounded-2xl border border-border/60 bg-card p-6">
             <div className="flex flex-wrap items-center gap-2">
               <span className="rounded-full bg-primary/10 px-3 py-1 font-serif text-lg font-semibold text-primary tabular-nums">
                 {grade.raw} ponto{grade.raw === 1 ? "" : "s"}
@@ -185,7 +185,7 @@ export function HiwPractice({ question }: { question: HiwQuestion }) {
             </p>
           </div>
           {question.explanation ? (
-            <div className="rounded-xl border border-border bg-card p-4 text-sm">
+            <div className="rounded-xl border border-border/60 bg-card p-4 text-sm">
               <div className="flex items-center justify-between gap-2">
                 <p className="font-medium">Explicação</p>
                 <PlusSpeakButton

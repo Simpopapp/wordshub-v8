@@ -114,7 +114,7 @@ function PracticeLoading() {
   return (
     <div className="min-h-dvh bg-background text-foreground">
       <TopNav />
-      <main className="mx-auto w-full max-w-4xl px-4 pt-6 sm:px-6 sm:pt-8">
+      <main className="mx-auto w-full max-w-3xl px-4 pt-6 sm:px-6 sm:pt-8">
         {/* Geometria estável: header + estímulo + ações (projeto 12, S1). */}
         <p role="status" aria-live="polite" className="sr-only">
           Carregando questão…
