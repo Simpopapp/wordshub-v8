@@ -218,7 +218,7 @@ export function RespondSituationPractice({ question }: { question: RespondSituat
         </>
       }
     >
-      <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
+      <div className="rounded-2xl border border-border/60 bg-card p-6 md:p-8 shadow-card">
         {question.prompt ? (
           <p className="mb-4 text-sm italic text-muted-foreground">{question.prompt}</p>
         ) : null}
@@ -268,24 +268,24 @@ export function RespondSituationPractice({ question }: { question: RespondSituat
           {grade ? (
             <>
               <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-                <div className="rounded-xl border border-border bg-card p-4 text-center">
+                <div className="rounded-xl border border-border/60 bg-card p-4 text-center">
                   <div className="font-serif text-2xl font-semibold">{grade.score}</div>
                   <div className="text-xs text-muted-foreground">score</div>
                 </div>
-                <div className="rounded-xl border border-border bg-card p-4 text-center">
+                <div className="rounded-xl border border-border/60 bg-card p-4 text-center">
                   <div className="font-serif text-2xl font-semibold">{grade.coverage}%</div>
                   <div className="text-xs text-muted-foreground">keywords</div>
                 </div>
-                <div className="rounded-xl border border-border bg-card p-4 text-center">
+                <div className="rounded-xl border border-border/60 bg-card p-4 text-center">
                   <div className="font-serif text-2xl font-semibold">{grade.wpm}</div>
                   <div className="text-xs text-muted-foreground">wpm</div>
                 </div>
-                <div className="rounded-xl border border-border bg-card p-4 text-center">
+                <div className="rounded-xl border border-border/60 bg-card p-4 text-center">
                   <div className="font-serif text-2xl font-semibold">{grade.pauses}</div>
                   <div className="text-xs text-muted-foreground">pausas</div>
                 </div>
               </div>
-              <div className="rounded-xl border border-border bg-card p-4 text-sm">
+              <div className="rounded-xl border border-border/60 bg-card p-4 text-sm">
                 <p className="font-medium">Keywords cobertas</p>
                 <div className="mt-2 flex flex-wrap gap-2">
                   {grade.covered.map((k) => (
@@ -317,7 +317,7 @@ export function RespondSituationPractice({ question }: { question: RespondSituat
                 ) : null}
               </div>
               {grade.transcript ? (
-                <div className="rounded-xl border border-border bg-card p-4 text-sm">
+                <div className="rounded-xl border border-border/60 bg-card p-4 text-sm">
                   <p className="font-medium">Sua fala</p>
                   <p className="mt-2 text-muted-foreground">{grade.transcript}</p>
                 </div>
@@ -325,7 +325,7 @@ export function RespondSituationPractice({ question }: { question: RespondSituat
             </>
           ) : null}
           {notGradable && !micDenied ? (
-            <div className="rounded-xl border border-border bg-card p-4 text-sm">
+            <div className="rounded-xl border border-border/60 bg-card p-4 text-sm">
               <p className="font-medium">Não foi possível avaliar esta resposta.</p>
               <p className="mt-1 text-muted-foreground">
                 A fala ficou curta demais — fale por pelo menos alguns segundos e tente de novo.
@@ -333,7 +333,7 @@ export function RespondSituationPractice({ question }: { question: RespondSituat
             </div>
           ) : null}
           {question.sample ? (
-            <div className="rounded-xl border border-border bg-card p-4 text-sm">
+            <div className="rounded-xl border border-border/60 bg-card p-4 text-sm">
               <p className="font-medium">Resposta modelo</p>
               <p className="mt-1 font-serif leading-relaxed text-muted-foreground">
                 {question.sample}

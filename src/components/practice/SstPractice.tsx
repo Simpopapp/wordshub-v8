@@ -170,7 +170,7 @@ export function SstPractice({ question }: { question: SstQuestion | SummaryChoic
       }
     >
       {/* Prompt / player */}
-      <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
+      <div className="rounded-2xl border border-border/60 bg-card p-6 md:p-8 shadow-card">
         <p className="text-sm italic text-muted-foreground">{question.prompt}</p>
         <div className="mt-4 flex items-center gap-3">
           <span
@@ -192,7 +192,7 @@ export function SstPractice({ question }: { question: SstQuestion | SummaryChoic
       </div>
 
       {/* Área de resposta */}
-      <div className="mt-6 rounded-2xl border border-border bg-card p-6 md:p-8">
+      <div className="mt-6 rounded-2xl border border-border/60 bg-card p-6 md:p-8 shadow-card">
         <textarea
           value={typed}
           onChange={(e) => setTyped(e.target.value)}
@@ -228,7 +228,7 @@ export function SstPractice({ question }: { question: SstQuestion | SummaryChoic
       {phase === "result" && grade ? (
         <div className="mt-6 space-y-4">
           <TemplateWarning verdict={template} />
-          <div className="rounded-2xl border border-border bg-card p-6">
+          <div className="rounded-2xl border border-border/60 bg-card p-6">
             <div className="flex flex-wrap items-center gap-2">
               <span className="rounded-full bg-primary/10 px-3 py-1 font-serif text-lg font-semibold text-primary tabular-nums">
                 {grade.score}%
@@ -260,7 +260,7 @@ export function SstPractice({ question }: { question: SstQuestion | SummaryChoic
             </div>
           </div>
 
-          <details className="rounded-xl border border-border bg-card p-4 text-sm">
+          <details className="rounded-xl border border-border/60 bg-card p-4 text-sm">
             <summary className="cursor-pointer font-medium">Ver transcrição da palestra</summary>
             <PlusWordText
               text={question.transcript}
@@ -281,14 +281,14 @@ export function SstPractice({ question }: { question: SstQuestion | SummaryChoic
           </details>
 
           {question.gradingNotes ? (
-            <div className="rounded-xl border border-border bg-card p-4 text-sm">
+            <div className="rounded-xl border border-border/60 bg-card p-4 text-sm">
               <p className="font-medium">O que o corretor procura</p>
               <p className="mt-1 text-muted-foreground">{question.gradingNotes}</p>
             </div>
           ) : null}
 
           {question.sample ? (
-            <div className="rounded-xl border border-border bg-card p-4 text-sm">
+            <div className="rounded-xl border border-border/60 bg-card p-4 text-sm">
               <div className="flex items-center justify-between gap-2">
                 <p className="font-medium">Resposta modelo</p>
                 <PlusSpeakButton

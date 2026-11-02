@@ -33,6 +33,8 @@ Can you help me with the following actions:
 ## Arquitetura e Ambiente
 - Tradução IA é server-only: o provider/SDK de IA vive só em `src/server/gateway.ts` e a chave do gateway é lida dentro do handler (`src/lib/plus/ai-translate.functions.ts`); nada de IA entra no bundle do cliente — o cliente só chama as server functions `translateAiWord`/`translateAiPhrase`.
 - Vocabulário do Studie Plus é campo `vocabulary` do `AppState` (v7): entra na migração, no backup e na mescla (`src/lib/backup.ts`); mutadores públicos em `src/lib/storage.ts`, funções puras em `src/lib/plus/vocab.ts` (limpeza total = `clearVocabAll`).
+- Cards de tradução (palavra e frase) usam um único container `TranslationSheet` (`src/components/plus/TranslationSheet.tsx`, portal em `document.body`; bottom sheet no mobile / painel central no desktop): `PlusWordText` e `PlusPhraseCard` são só conteúdo. Novos cards de tradução consomem o sheet; nunca ancorar card ao ponto de clique nem expandir inline (decisão do projeto 12, PRD D1/D2).
+- Design system do projeto 12 vive em `src/styles.css` (tokens papel/tinta/índigo/âmbar light+dark, sombras `shadow-card/pop/sheet`, `bg-glow`, radius 1rem, `prefers-reduced-motion`); fontes Fraunces+Inter via `<link>` em `__root.tsx` (nunca `@import` remoto no CSS); ícones só via `lucide-react`; regra de largura de página documentada no `PageHeader` (5xl home · 4xl índices · 3xl superfícies de estudo · 2xl foco pós-conclusão).
 
 ## Verificação e Qualidade
 - Gates obrigatórios por fase: vitest (`bunx vitest run`) · tsgo limpo · `bun run build` · lint 0 erros · Playwright quando a fase toca UI (console limpo, axe 0 violações nas rotas tocadas, 390×844 sem overflow).

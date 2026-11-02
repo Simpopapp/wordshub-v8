@@ -121,7 +121,7 @@ export function ReorderPractice({ question }: { question: ReorderQuestion }) {
         </>
       }
     >
-      <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
+      <div className="rounded-2xl border border-border/60 bg-card p-6 md:p-8 shadow-card">
         <div className="mb-4 flex items-start justify-between gap-3">
           <p className="text-sm text-muted-foreground">{question.prompt}</p>
           <PlusSpeakButton
@@ -206,7 +206,7 @@ export function ReorderPractice({ question }: { question: ReorderQuestion }) {
       />
 
       {phase === "result" && grade ? (
-        <div className="mt-6 rounded-2xl border border-border bg-card p-6">
+        <div className="mt-6 rounded-2xl border border-border/60 bg-card p-6">
           <div className="flex flex-wrap items-center gap-2">
             <span className="rounded-full bg-primary/10 px-3 py-1 font-serif text-lg font-semibold tabular-nums text-primary">
               {grade.score}%

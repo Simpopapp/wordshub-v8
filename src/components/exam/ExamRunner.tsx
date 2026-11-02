@@ -149,7 +149,7 @@ function SpeechWidget({
   };
 
   return (
-    <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
+    <div className="rounded-2xl border border-border/60 bg-card p-6 md:p-8 shadow-card">
       <MicNotice />
       {showPassage ? (
         <p className="font-serif text-[15px] leading-relaxed text-foreground/90">{question.text}</p>
@@ -173,7 +173,7 @@ function SpeechWidget({
         <img
           src={DESCRIBE_IMAGE_ASSETS[question.image]}
           alt={question.alt}
-          className="mt-4 max-h-72 w-auto max-w-full rounded-xl border border-border bg-white p-2"
+          className="mt-4 max-h-72 w-auto max-w-full rounded-xl border border-border bg-background p-2"
           loading="lazy"
         />
       ) : null}
@@ -254,7 +254,7 @@ function DictationWidget({
   const words = typed.trim() ? tokenize(typed).length : 0;
 
   return (
-    <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
+    <div className="rounded-2xl border border-border/60 bg-card p-6 md:p-8 shadow-card">
       <p className="text-sm text-muted-foreground">
         Ouça a frase (1 reprodução) e digite exatamente o que ouviu.
       </p>
@@ -323,7 +323,7 @@ function SummaryWidget({
   const words = typed.trim() ? tokenize(typed).length : 0;
 
   return (
-    <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
+    <div className="rounded-2xl border border-border/60 bg-card p-6 md:p-8 shadow-card">
       {isWritten ? (
         <p className="font-serif text-[15px] leading-relaxed text-foreground/90">{question.text}</p>
       ) : (
@@ -394,7 +394,7 @@ function FibWidget({
   }, [registerSubmit, submit]);
 
   return (
-    <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
+    <div className="rounded-2xl border border-border/60 bg-card p-6 md:p-8 shadow-card">
       <p className="text-sm text-muted-foreground">Ouça o áudio e preencha as lacunas.</p>
       <Button
         variant="outline"
@@ -466,7 +466,7 @@ function HiwWidget({
   }, [registerSubmit, submit]);
 
   return (
-    <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
+    <div className="rounded-2xl border border-border/60 bg-card p-6 md:p-8 shadow-card">
       <p className="text-sm text-muted-foreground">
         Ouça o áudio e clique nas palavras do texto que <strong>não</strong> aparecem nele.
       </p>
@@ -555,7 +555,7 @@ function ChoiceWidget({
 
   return (
     <div className="space-y-6">
-      <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
+      <div className="rounded-2xl border border-border/60 bg-card p-6 md:p-8 shadow-card">
         {question.taskType === "lst_smw" ? (
           <p className="font-serif text-[15px] leading-relaxed text-foreground/90">
             {question.text}{" "}
@@ -578,7 +578,7 @@ function ChoiceWidget({
         ) : null}
       </div>
 
-      <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
+      <div className="rounded-2xl border border-border/60 bg-card p-6 md:p-8 shadow-card">
         <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
           {isMulti ? "Marque todas as corretas (erro desconta)" : "Escolha uma"}
         </p>
@@ -649,7 +649,7 @@ function EssayExamWidget({
   }, [registerSubmit, submit]);
 
   return (
-    <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
+    <div className="rounded-2xl border border-border/60 bg-card p-6 md:p-8 shadow-card">
       <p className="text-sm text-muted-foreground">
         Escreva a redação completa: 200-300 palavras, 20 minutos no relógio do bloco.
       </p>
@@ -714,7 +714,7 @@ function ReorderExamWidget({
   }, [registerSubmit, submit]);
 
   return (
-    <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
+    <div className="rounded-2xl border border-border/60 bg-card p-6 md:p-8 shadow-card">
       <p className="text-sm text-muted-foreground">
         Reordene os trechos para formar um parágrafo coerente.
       </p>
@@ -819,7 +819,7 @@ function FibDropdownExamWidget({
   }
 
   return (
-    <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
+    <div className="rounded-2xl border border-border/60 bg-card p-6 md:p-8 shadow-card">
       <p className="text-sm text-muted-foreground">Escolha a palavra correta para cada lacuna.</p>
       <p className="mt-4 font-serif text-[15px] leading-loose">{nodes}</p>
     </div>
@@ -977,7 +977,7 @@ export function ExamRunner({ examId, onExit }: { examId: ExamId; onExit: () => v
             />
           </section>
 
-          <section className="rounded-2xl border border-border bg-card p-5">
+          <section className="rounded-2xl border border-border/60 bg-card p-5 shadow-card">
             <h2 className="text-sm font-medium text-muted-foreground">Média por seção</h2>
             <div className="mt-4 space-y-2">
               {summary.bySection.map((s) => (
@@ -1007,7 +1007,7 @@ export function ExamRunner({ examId, onExit }: { examId: ExamId; onExit: () => v
           </section>
 
           {summary.bySkill.some((s) => s.avg !== null || s.practiceAvg !== null) ? (
-            <section className="rounded-2xl border border-border bg-card p-5">
+            <section className="rounded-2xl border border-border/60 bg-card p-5 shadow-card">
               <h2 className="text-sm font-medium text-muted-foreground">
                 Por habilidade (vs. prática livre)
               </h2>
@@ -1026,7 +1026,7 @@ export function ExamRunner({ examId, onExit }: { examId: ExamId; onExit: () => v
           ) : null}
 
           {summary.byType.length > 0 ? (
-            <section className="rounded-2xl border border-border bg-card p-5">
+            <section className="rounded-2xl border border-border/60 bg-card p-5 shadow-card">
               <h2 className="text-sm font-medium text-muted-foreground">
                 Por task type (vs. prática livre)
               </h2>
@@ -1056,7 +1056,7 @@ export function ExamRunner({ examId, onExit }: { examId: ExamId; onExit: () => v
           ) : null}
 
           {summary.weakest.length > 0 ? (
-            <section className="rounded-2xl border border-border bg-card p-5">
+            <section className="rounded-2xl border border-border/60 bg-card p-5 shadow-card">
               <h2 className="text-sm font-medium text-muted-foreground">Pontos fracos</h2>
               <div className="mt-3 flex flex-wrap gap-2">
                 {summary.weakest.map((t) => (
